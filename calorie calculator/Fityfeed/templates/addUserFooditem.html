@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+{% load static%}
+{% block content %}
+<style>
+    body {
+        background-image: url('{% static 'C:\Users\reddy\OneDrive\Desktop\miniproject\static\css\f5.avif' %}');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    form{
+        border:1px solid rgb(160, 39, 83);
+        margin:auto;
+        padding: 40px;
+        background-color: #fff; /* add a white background to the form to make it visible */
+        opacity: 0.8; /* adjust the opacity to make the background image visible */
+    }
+</style>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" class="btn btn-success" value="submit">
+</form>
+{% endblock %}
